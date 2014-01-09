@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="88">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="glib">
+      <df name="base">
+        <in>base.cpp</in>
+        <in>base.h</in>
+        <in>bd.cpp</in>
+        <in>bd.h</in>
+        <in>bits.cpp</in>
+        <in>bits.h</in>
+        <in>blobbs.cpp</in>
+        <in>blobbs.h</in>
+        <in>cache.h</in>
+        <in>ds.h</in>
+        <in>dt.cpp</in>
+        <in>dt.h</in>
+        <in>env.cpp</in>
+        <in>env.h</in>
+        <in>fl.cpp</in>
+        <in>fl.h</in>
+        <in>gix.h</in>
+        <in>guid.cpp</in>
+        <in>guid.h</in>
+        <in>hash.cpp</in>
+        <in>hash.h</in>
+        <in>html.cpp</in>
+        <in>html.h</in>
+        <in>http.cpp</in>
+        <in>http.h</in>
+        <in>json.cpp</in>
+        <in>json.h</in>
+        <in>linalg.cpp</in>
+        <in>linalg.h</in>
+        <in>lx.cpp</in>
+        <in>lx.h</in>
+        <in>md5.cpp</in>
+        <in>md5.h</in>
+        <in>os.cpp</in>
+        <in>os.h</in>
+        <in>shash.h</in>
+        <in>ss.cpp</in>
+        <in>ss.h</in>
+        <in>stdafx.h</in>
+        <in>strut.cpp</in>
+        <in>strut.h</in>
+        <in>tm.cpp</in>
+        <in>tm.h</in>
+        <in>unicode.cpp</in>
+        <in>unicode.h</in>
+        <in>unicodestring.cpp</in>
+        <in>unicodestring.h</in>
+        <in>url.cpp</in>
+        <in>url.h</in>
+        <in>ut.cpp</in>
+        <in>ut.h</in>
+        <in>wch.cpp</in>
+        <in>wch.h</in>
+        <in>xfl.cpp</in>
+        <in>xfl.h</in>
+        <in>xmath.cpp</in>
+        <in>xmath.h</in>
+        <in>xml.cpp</in>
+        <in>xml.h</in>
+        <in>xmlser.h</in>
+        <in>zipfl.cpp</in>
+        <in>zipfl.h</in>
+      </df>
+      <df name="mine">
+        <in>acquis.cpp</in>
+        <in>acquis.h</in>
+        <in>biling.cpp</in>
+        <in>biling.h</in>
+        <in>bowactlearn.cpp</in>
+        <in>bowactlearn.h</in>
+        <in>bowbs.cpp</in>
+        <in>bowbs.h</in>
+        <in>bowclust.cpp</in>
+        <in>bowclust.h</in>
+        <in>bowfl.cpp</in>
+        <in>bowfl.h</in>
+        <in>bowlearn.cpp</in>
+        <in>bowlearn.h</in>
+        <in>bowlinalg.cpp</in>
+        <in>bowlinalg.h</in>
+        <in>bowmd.cpp</in>
+        <in>bowmd.h</in>
+        <in>ccar.cpp</in>
+        <in>ccar.h</in>
+        <in>cfyres.cpp</in>
+        <in>cfyres.h</in>
+        <in>ciawfb.cpp</in>
+        <in>ciawfb.h</in>
+        <in>cpdoc.cpp</in>
+        <in>cpdoc.h</in>
+        <in>dmoz.cpp</in>
+        <in>dmoz.h</in>
+        <in>ftrgen.cpp</in>
+        <in>ftrgen.h</in>
+        <in>kernelmethods.cpp</in>
+        <in>kernelmethods.h</in>
+        <in>kmpp.h</in>
+        <in>logreg.cpp</in>
+        <in>logreg.h</in>
+        <in>mine.cpp</in>
+        <in>mine.h</in>
+        <in>ontolight.cpp</in>
+        <in>ontolight.h</in>
+        <in>phrase.cpp</in>
+        <in>phrase.h</in>
+        <in>semspace.cpp</in>
+        <in>semspace.h</in>
+        <in>stemming.cpp</in>
+        <in>stemming.h</in>
+        <in>stopword.cpp</in>
+        <in>stopword.h</in>
+        <in>strkernel.cpp</in>
+        <in>strkernel.h</in>
+        <in>svmPrLoqo.cpp</in>
+        <in>svmPrLoqo.h</in>
+        <in>svmbasic.cpp</in>
+        <in>svmbasic.h</in>
+        <in>svmmodels.cpp</in>
+        <in>svmmodels.h</in>
+        <in>tokenizer.cpp</in>
+        <in>tokenizer.h</in>
+        <in>vizmap.cpp</in>
+        <in>vizmap.h</in>
+      </df>
+      <df name="net">
+        <df name="libuv">
+          <df name="uv-private">
+            <in>uv-linux.h</in>
+          </df>
+        </df>
+        <in>favicon.cpp</in>
+        <in>geoip.cpp</in>
+        <in>geoip.h</in>
+        <in>net.cpp</in>
+        <in>net.h</in>
+        <in>sappsrv.cpp</in>
+        <in>sappsrv.h</in>
+        <in>sock.cpp</in>
+        <in>sock.h</in>
+        <in>socksys.cpp</in>
+        <in>webpgfetch.cpp</in>
+        <in>webpgfetch.h</in>
+        <in>websrv.cpp</in>
+        <in>websrv.h</in>
+      </df>
+    </df>
+    <logicalFolder name="src"
+                   displayName="src"
+                   projectFiles="true"
+                   root="../libuv/src">
+      <logicalFolder name="unix" displayName="unix" projectFiles="true">
+        <itemPath>../libuv/src/unix/async.c</itemPath>
+        <itemPath>../libuv/src/unix/core.c</itemPath>
+        <itemPath>../libuv/src/unix/dl.c</itemPath>
+        <itemPath>../libuv/src/unix/error.c</itemPath>
+        <itemPath>../libuv/src/unix/fs.c</itemPath>
+        <itemPath>../libuv/src/unix/getaddrinfo.c</itemPath>
+        <itemPath>../libuv/src/unix/linux-core.c</itemPath>
+        <itemPath>../libuv/src/unix/linux-inotify.c</itemPath>
+        <itemPath>../libuv/src/unix/linux-syscalls.c</itemPath>
+        <itemPath>../libuv/src/unix/loop-watcher.c</itemPath>
+        <itemPath>../libuv/src/unix/loop.c</itemPath>
+        <itemPath>../libuv/src/unix/pipe.c</itemPath>
+        <itemPath>../libuv/src/unix/poll.c</itemPath>
+        <itemPath>../libuv/src/unix/process.c</itemPath>
+        <itemPath>../libuv/src/unix/proctitle.c</itemPath>
+        <itemPath>../libuv/src/unix/signal.c</itemPath>
+        <itemPath>../libuv/src/unix/stream.c</itemPath>
+        <itemPath>../libuv/src/unix/tcp.c</itemPath>
+        <itemPath>../libuv/src/unix/thread.c</itemPath>
+        <itemPath>../libuv/src/unix/threadpool.c</itemPath>
+        <itemPath>../libuv/src/unix/timer.c</itemPath>
+        <itemPath>../libuv/src/unix/tty.c</itemPath>
+        <itemPath>../libuv/src/unix/udp.c</itemPath>
+      </logicalFolder>
+      <itemPath>../libuv/src/fs-poll.c</itemPath>
+      <itemPath>../libuv/src/inet.c</itemPath>
+      <itemPath>../libuv/src/uv-common.c</itemPath>
+      <itemPath>../libuv/src/version.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>../libuv/include</pElem>
+              <pElem>../libuv/include/uv-private</pElem>
+              <pElem>../libuv/src</pElem>
+              <pElem>../libuv</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>_FILE_OFFSET_BITS=64</Elem>
+              <Elem>_GNU_SOURCE</Elem>
+              <Elem>_LARGEFILE_SOURCE</Elem>
+            </preprocessorList>
+          </cTool>
+          <ccTool>
+            <preprocessorList>
+              <Elem>_OPENMP=200505</Elem>
+            </preprocessorList>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="../libuv/src/fs-poll.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/inet.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/async.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/core.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/dl.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/error.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/fs.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/getaddrinfo.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/linux-core.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/linux-inotify.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/linux-syscalls.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/loop-watcher.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/loop.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/pipe.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/poll.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/process.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/proctitle.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/signal.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/stream.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/tcp.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/thread.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/threadpool.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/timer.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/tty.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/unix/udp.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/uv-common.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../libuv/src/version.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="base/base.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="base/base.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/bd.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/bd.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/bits.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/bits.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/blobbs.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/blobbs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/cache.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/ds.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/dt.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/dt.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/env.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/env.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/fl.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/fl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/gix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/guid.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/guid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/hash.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/hash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/html.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/html.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/http.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/http.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/json.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/json.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/linalg.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/linalg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/lx.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/lx.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/md5.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/md5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/os.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/os.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/shash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/ss.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/ss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/stdafx.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/strut.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/strut.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/tm.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/tm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/unicode.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/unicode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/unicodestring.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/unicodestring.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/url.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/url.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/ut.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/ut.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/wch.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/wch.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/xfl.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/xfl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/xmath.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/xmath.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/xml.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/xml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/xmlser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/zipfl.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/zipfl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <folder path="glib/base">
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="glib/mine">
+        <ccTool>
+          <incDir>
+            <pElem>base</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="glib/net">
+        <ccTool>
+          <incDir>
+            <pElem>base</pElem>
+            <pElem>../libuv/include</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="mine/acquis.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/acquis.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/biling.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/biling.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowactlearn.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowactlearn.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowbs.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowbs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowclust.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowclust.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowfl.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowfl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowlearn.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowlearn.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowlinalg.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowlinalg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowmd.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/bowmd.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/ccar.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/ccar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/cfyres.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/cfyres.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/ciawfb.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/ciawfb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/cpdoc.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/cpdoc.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/dmoz.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/dmoz.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/ftrgen.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/ftrgen.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/kernelmethods.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/kernelmethods.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/kmpp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/logreg.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/logreg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/mine.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="mine/mine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/ontolight.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/ontolight.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/phrase.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/phrase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/semspace.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/semspace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/stemming.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/stemming.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/stopword.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/stopword.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/strkernel.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/strkernel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/svmPrLoqo.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/svmPrLoqo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/svmbasic.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/svmbasic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/svmmodels.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/svmmodels.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/tokenizer.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/tokenizer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/vizmap.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mine/vizmap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/favicon.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/geoip.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/geoip.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/libuv/uv-private/uv-linux.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/net.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool>
+        </ccTool>
+      </item>
+      <item path="net/net.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/sappsrv.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/sappsrv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/sock.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/sock.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/socksys.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/webpgfetch.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/webpgfetch.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/websrv.cpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="net/websrv.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,284 @@
+#ifndef CROSSLINGUAL_H
+#define CROSSLINGUAL_H
+
+#include "base.h"
+
+namespace TCrossLingual {
+
+///////////////////////////////
+// TCLProjectors
+//   Interface to projector classes
+class TCLProjectors {
+public:
+	// project a sparse document	
+	virtual void Project(const TPair<TIntV, TFltV>& Doc, const TStr& DocLangId, const TStr& Lang2Id, TFltV& Projected) const = 0;
+	// project a sparse matrix (columns = documents)
+	virtual void Project(const TTriple<TIntV, TIntV, TFltV>& DocMatrix, const TStr& DocLangId, const TStr& Lang2Id, TFltVV& Projected) const = 0;
+};
+
+///////////////////////////////
+// TCLPairwiseProjector
+//   Language pairs have different common spaces
+class TCLPairwiseProjector : TCLProjectors {
+private:
+	// Projectors: cols = num words, rows = num projectors
+	TVec<TPair<TFltVV, TFltVV>> Projectors;
+	// centroid length = num words
+	TVec<TPair<TFltV, TFltV>> Centers;
+	// Pairs of language ids
+	TVec<TPair<TStr, TStr>> LangIds;
+public:
+	TCLPairwiseProjector() {}
+	// project a sparse document	
+	void Project(const TPair<TIntV, TFltV>& Doc, const TStr& DocLangId, const TStr& Lang2Id, TFltV& Projected) {}
+	// project a sparse matrix (columns = documents)
+	void Project(const TTriple<TIntV, TIntV, TFltV>& DocMatrix, const TStr& DocLangId, const TStr& Lang2Id, TFltVV& Projected) {}
+
+};
+
+///////////////////////////////
+// TCLCommonSpaceProjector
+//   Projects to a common vector space
+class TCLCommonSpaceProjector : TCLProjectors {
+private:
+	// Projectors[i]: cols = num words, rows = num projectors for the i-th language
+	TVec<TFltVV> Projectors;
+	// length(Centers[i]) = num words in language i
+	TVec<TFltV> Centers;
+	TVec<TStr> LangIds;
+public:
+	TCLCommonSpaceProjector() {}
+	// project a sparse document	
+	void Project(const TPair<TIntV, TFltV>& Doc, const TStr& DocLangId, const TStr& Lang2Id, TFltV& Projected) {}
+	// project a sparse matrix (columns = documents)
+	void Project(const TTriple<TIntV, TIntV, TFltV>& DocMatrix, const TStr& DocLangId, const TStr& Lang2Id, TFltVV& Projected) {}
+
+};
+
+
+///////////////////////////////
+// TCLCore
+//   Core cross-lingual class that provides: vector space representation, projections and similarity computation
+class TCLCore {
+private:
+	TCLProjectors* Projectors;
+	// TODO: TVec<TUTokenizer> // unicode tokenizer
+	TVec<TStr> LangIdV; // i-th language <==> i-th unicode tokenizer
+	TVec<TIntV> InvDocFq;
+	TVec<THash<TStr, TInt>> BowMap; // each language gets a hash map that maps tokenized input words to indices
+
+public:
+	// Text to sparse vector
+	void TextToVector(const TStr& Text, const TStr& LangId, TPair<TIntV, TFltV>& SparseVec) {
+		// TODO: tokenize, BowMap, tfidfn
+	}
+	// project a sparse document	
+	void Project(const TPair<TIntV, TFltV>& Doc, const TStr& DocLangId, const TStr& Lang2Id, TFltV& Projected) {
+		Projectors->Project(Doc, DocLangId, Lang2Id, Projected);
+	}
+	// project a sparse matrix (columns = documents)
+	void Project(const TTriple<TIntV, TIntV, TFltV>& DocMatrix, const TStr& DocLangId, const TStr& Lang2Id, TFltVV& Projected) {
+		Projectors->Project(DocMatrix, DocLangId, Lang2Id, Projected);
+	}
+
+	double GetSimilarity(const TStr& Text1, const TStr& Text2, const TStr& Lang1Id, const TStr& Lang2Id) {
+		// TODO: TextToVector, Project, Cosine similarity
+		return 0.0;
+	}	
+	double GetSimilarity(TFltV& Doc1, const TFltV& Doc2, const TStr& Lang1Id, const TStr& Lang2Id) {
+		// TODO: Project, Cosine similarity
+		return 0.0;
+	}
+
+};
+
+///////////////////////////////
+// TCLDmozNode
+//   Dmoz classifier node
+class TCLDmozNode {
+	public:
+		TCLDmozNode() {}
+		void Disp();
+		void Save(TSOut& SOut) const;
+		explicit TCLDmozNode(TSIn& SIn): DocIdxV(SIn), CatStr(SIn), CatPathStr(SIn), StrToChildIdH(SIn){}
+		friend class TCLDmoz;
+	private:
+		TIntV DocIdxV; //DocIdxV = indices of documents for a given node	
+		TStr CatStr; 
+		TStr CatPathStr; 
+		TStrIntH StrToChildIdH; // string -> child Id		
+};
+
+///////////////////////////////
+// TCLDmoz
+//   Dmoz classifier
+class TCLDmoz {
+private:
+	// Core cross-lingual functionalities
+	TCLCore* CLCore;
+	// TODO: path to dmoz documents
+public:
+	TCLDmoz() {}
+
+	void ComputeModel() {
+		// TODO: Project Dmoz 
+		// TODO: Compute centroids
+	}
+	// Get the centroid specific category string
+	TStr& GetClassStr(const int& NodeId);
+	// Get the centroid specific category path string
+	TStr& GetClassPathStr(const int& NodeId);
+	// Classify a single document
+	void Classify(const TStr& Text, TInt& Class, const TStr& TextLangId, const TStr& Lang2Id) {}
+	// Classify multiple documents
+	void Classify(const TStrV& Texts, TIntV& Class, const TStr& TextLangId, const TStr& Lang2Id) {}
+};
+
+///////////////////////////////
+// TCLStream
+//   Comparing streams of documents
+class TCLStream {
+private:
+	// Core cross-lingual functionalities
+	TCLCore* CLCore;
+	TVec<TStr> StreamLangIds; // language of each stream
+	TIntV ProjStreamIdxV; // index of the original stream
+	TVec<TPair<TStr, TStr>> ProjStreamLangPairs; // sorted language pairs, autogenerated by using StreamLangIds and TrackPairs
+	//**********************************************************************************************************************
+
+	//// 4 languages: en, es, de, fr	
+	//// 5 streams with their indices
+	// 0 <-> en_bloomberg
+	// 1 <-> en_news
+	// 2 <-> es_news
+	// 3 <-> de_news
+	// 4 <-> fr_news
+
+	//StreamLangIds[0] = en;
+	//StreamLangIds[1] = en;
+	//StreamLangIds[2] = es;
+	//StreamLangIds[3] = de;
+	//StreamLangIds[4] = fr;
+	
+	//// Selection of pairs of streams to track
+	// TrackPairs[0] = 0, 1 ; track similarities in SimMatrices[0] // compare en_bloomberg and en_news
+	// TrackPairs[1] = 1, 2 ; track similarities in SimMatrices[1] // compare en_news and es_news
+	// TrackPairs[2] = 0, 3 ; track similarities in SimMatrices[2] // compare en_bloomberg and de_news
+	// TrackPairs[3] = 2, 4 ; track similarities in SimMatrices[3] // compare es_news and fr_news
+	// TrackPairs[4] = 0, 2 ; track similarities in SimMatrices[4] // compare en_bloomberg and es_news
+		
+	//**********************************************************************************************************************
+
+	//// CCA (Pairwise) projectors (three pairs)
+	// Projectors[0] = Pen, Pes; LangIds[0] = en, es
+	// Projectors[1] = Pen, Pde; LangIds[1] = en, de
+	// Projectors[2] = Pes, Pfr; LangIds[2] = es, fr
+
+	// en_bloomberg <-> en_news
+	// ProjStreams[0] = en_bloomberg projected with Projectors, ProjStreamLangPairs lang1 = en, lang2 = en
+	// ProjStreams[1] = en_news projected with Projectors, ProjStreamLangPairs lang1 = en, lang2 = en
+	// en_news <-> es_news
+	// ProjStreams[2] = en_news projected with Projectors, ProjStreamLangPairs lang1 = en, lang2 = es
+	// ProjStreams[3] = es_news projected with Projectors, ProjStreamLangPairs lang1 = es, lang2 = en
+	// en_bloomberg <->  de_news
+	// ProjStreams[4] = en_bloomberg projected with Projectors, ProjStreamLangPairs lang1 = en, lang2 = de
+	// ProjStreams[5] = de_news projected with Projectors, ProjStreamLangPairs lang1 = de, lang2 = en
+	// es_news <-> fr_news
+	// ProjStreams[6] = es_news projected with Projectors, ProjStreamLangPairs lang1 = es, lang2 = fr
+	// ProjStreams[7] = fr_news projected with Projectors, ProjStreamLangPairs lang1 = fr, lang2 = es
+	// en_bloomberg <-> es_news
+	// ProjStreams[8] = en_bloomberg projected with Projectors, ProjStreamLangPairs lang1 = en, lang2 = es
+	// We do not need ProjStreams[9] = ProjStreams[3] = es_news projected with Projectors, ProjStreamLangPairs lang1 = es, lang2 = en
+	
+	// ProjStreamIdxV[0] = 0 // en_bloomberg
+	// ProjStreamIdxV[1] = 1 // en_news
+	// ProjStreamIdxV[2] = 1 // en_news
+	// ProjStreamIdxV[3] = 2 // es_news
+	// ProjStreamIdxV[4] = 0 // en_bloomberg
+	// ProjStreamIdxV[5] = 3 // de_news
+	// ProjStreamIdxV[6] = 2 // es_news
+	// ProjStreamIdxV[7] = 4 // fr_news
+	// ProjStreamIdxV[8] = 0 // en_bloomberg
+
+	// SimMatrices[0] = ProjStreams[0]'*ProjStreams[1] // en_bloomberg <-> en_news
+	// SimMatrices[1] = ProjStreams[2]'*ProjStreams[3] // en_news <-> es_news
+	// SimMatrices[2] = ProjStreams[4]'*ProjStreams[5] // en_bloomberg <->  de_news
+	// SimMatrices[3] = ProjStreams[6]'*ProjStreams[7] // es_news <-> fr_news
+	// SimMatrices[4] = ProjStreams[8]'*ProjStreams[3] // en_bloomberg <-> es_news
+
+	//**********************************************************************************************************************
+	
+    //// MCCA (Common) projectors
+	// Projectors[0] = Pen; LangIds[0] = en
+	// Projectors[1] = Pes; LangIds[1] = es
+	// Projectors[2] = Pde; LangIds[2] = de
+	// Projectors[3] = Pfr; LangIds[3] = fr
+		
+	// ProjStreams[0] = en_bloomberg projected with Projectors, ProjStreamLangPairs lang1 = en, lang2 = ignored
+	// ProjStreams[1] = en_news projected with Projectors, ProjStreamLangPairs lang1 = en, lang2 = ignored
+	// ProjStreams[2] = es_news projected with Projectors, ProjStreamLangPairs lang1 = es, lang2 = ignored
+	// ProjStreams[3] = de_news projected with Projectors, ProjStreamLangPairs lang1 = de, lang2 = ignored
+	// ProjStreams[4] = fr_news projected with Projectors, ProjStreamLangPairs lang1 = fr, lang2 = ignored
+	
+	// ProjStreamIdxV[0] = 0 // en_bloomberg
+	// ProjStreamIdxV[1] = 1 // en_news
+	// ProjStreamIdxV[2] = 2 // es_news
+	// ProjStreamIdxV[3] = 3 // de_news
+	// ProjStreamIdxV[4] = 4 // fr_news
+	
+	// SimMatrices[0] = ProjStreams[0]'*ProjStreams[0] // en_bloomberg <-> en_news
+	// SimMatrices[1] = ProjStreams[0]'*ProjStreams[1] // en_news <-> es_news
+	// SimMatrices[2] = ProjStreams[0]'*ProjStreams[2] // en_bloomberg <->  de_news
+	// SimMatrices[3] = ProjStreams[1]'*ProjStreams[3] // es_news <-> fr_news
+	// SimMatrices[4] = ProjStreams[0]'*ProjStreams[1] // en_bloomberg <-> es_news
+
+	//**********************************************************************************************************************
+
+	// Each matrix corresponds to particular projection of some stream, the columns are the newest projected documents
+	TVec<TFltVV> ProjStreams;	
+	// Column index of the newest document in each matrix in ProjStreams;
+	TVec<TInt> LatestDocIdx;
+
+	
+	// Pairs of indices of ProjStreams that are to be compared
+	TVec<TPair<TInt, TInt>> TrackPairs;
+	// Similarity matrices between pairs in TrackPairs
+	TVec<TFltVV> SimMatrices;
+public:
+	TCLStream(const TIntV& BufferSizes, const TIntV& ProjRowSizes, const TVec<TStr>& StreamLangIds_, const TVec<TPair<TInt, TInt>>& TrackPairs_) : StreamLangIds(StreamLangIds_),  TrackPairs(TrackPairs_) {
+		// TODO: Set LatestDocIdx = 0
+		// TODO: Gen ProjStreams and ProjStreamLangPairs (using StreamLangIds and TrackPairs)
+		// TODO: Gen SimMatrices		
+	}
+	// Add document given text and its language id 
+	void AddDocument(const TStr& Text, const TInt& StreamIdx) {
+		TIntV ProjStreamIdxV;
+		// TODO: Find all ProjStreams indices where ProjStreamIdxV == StreamIdx and add them to StreamIdxV		
+		TStr LangId = StreamLangIds[StreamIdx];
+		// Compute vector space model (fill SparseVec) for LangId outside of the loop
+		TPair<TIntV, TFltV> SparseVec;
+		CLCore->TextToVector(Text, LangId, SparseVec);		
+		for (int ProjStreamN = 0; ProjStreamN < ProjStreamIdxV.Len(); ProjStreamN++) {						
+			AddDocument(SparseVec, ProjStreamIdxV[ProjStreamN]);
+		}
+		// TODO: Compute all required similarities (based on TrackPairs and LatestDocIdx)
+	}
+	// Add document given text and stream index
+	void AddDocument(const TPair<TIntV, TFltV>& SparseVec, const TInt& ProjStreamIdx) {
+		// Use CLCore + ProjStreamLangPairs[ProjStreamIdx] to update the StreamIdx matrix				
+		TFltV ProjText;	
+		CLCore->Project(SparseVec, ProjStreamLangPairs[ProjStreamIdx].Val1 , ProjStreamLangPairs[ProjStreamIdx].Val2, ProjText);
+		AddDocument(ProjText, ProjStreamIdx);
+	}
+	// Add projected document in a given stream
+	void AddDocument(const TFltV& Doc, const TInt& ProjStreamIdx) {
+		// TODO: Update ProjStreams[ProjStreamIdx] matrix
+		// TODO: Increment LatestDocIdx[ProjStreamIdx]		
+	}
+	// TODO: Getters
+
+};
+
+
+}
+#endif

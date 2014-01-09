@@ -1,0 +1,12 @@
+Source: dmoz
+Maintainer: Mark Rogers <mark@edgeflip.com>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9), uuid-dev (>= 2.20)
+
+Package: dmoz
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: classifies things
+    really does

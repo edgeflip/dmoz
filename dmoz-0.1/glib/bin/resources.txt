@@ -1,0 +1,2 @@
+Links to binary resources required by parts of GLib:
+  http://ailab.ijs.si/~blazf/glib/

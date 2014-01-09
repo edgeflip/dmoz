@@ -1,0 +1,16 @@
+"Accenture" "Accenture Ltd"
+"IBM" "International Business Machines"
+"LPP" Standalone
+"ZDA" Standalone
+"LDS" Standalone
+"SDS" Standalone
+"SLS" Standalone
+"Mag" "mag" Unperiod
+"Dr" "dr" Unperiod Ignore
+"Unesco" "UNESCO" Acronym
+"FIFA" Standalone Acronym
+"Minister" Standalone Ignore
+"Predsednik" Standalone Ignore
+"Poslanci" Standalone Ignore
+"Predstavniki" Standalone Ignore
+"–" Ignore

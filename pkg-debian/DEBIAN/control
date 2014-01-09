@@ -1,0 +1,9 @@
+Package: dmoz
+Version: 0.1
+Architecture: all
+Essential: no
+Section: web
+Priority: optional
+Depends: uuid-dev (>=2.20)
+Maintainer: Mark Rogers
+Description: Text Classifier Service

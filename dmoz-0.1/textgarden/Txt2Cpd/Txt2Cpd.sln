@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Txt2Cpd", "Txt2Cpd.vcproj", "{5A5B61F8-71EA-4E8E-8E06-3F55A7E73E03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A5B61F8-71EA-4E8E-8E06-3F55A7E73E03}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5A5B61F8-71EA-4E8E-8E06-3F55A7E73E03}.Debug|Win32.Build.0 = Debug|Win32
+		{5A5B61F8-71EA-4E8E-8E06-3F55A7E73E03}.Release|Win32.ActiveCfg = Release|Win32
+		{5A5B61F8-71EA-4E8E-8E06-3F55A7E73E03}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
